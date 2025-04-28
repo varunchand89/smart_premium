@@ -95,7 +95,7 @@ if submitted:
     scaler.fit(cato_3[['Premium Amount']])
     cato_test_3['Predicted_Target_premium_account'] = scaler.inverse_transform(cato_test_3[['Predicted_Target_premium_account']])
     
-st.write(cato_test_3['Predicted_Target_premium_account'])
+#st.write(cato_test_3['Predicted_Target_premium_account'])
     
     
    
