@@ -26,7 +26,7 @@ import joblib
 st.title("Smart premium")
 
 
-excel_file = "https://www.dropbox.com/scl/fi/l3yxmt5a6njrzkmz3c47l/train.csv?rlkey=g93z2ldy6qxvg59dkfchj68kd&st=7ys9wwpc&dl=0"
+
 
 with st.form(key="data_form"):
 
@@ -44,6 +44,7 @@ with st.form(key="data_form"):
 
 if submitted:
     data = {"Age" : [Age],"Number of Dependents":[Number_of_Dependents],"Health Score":[Health_Score],"Credit Score":[Credit_Score],"Insurance Duration":[Insurance_Duration],"Gender":[Gender],"Smoking Status":[Smoking_Status],"Location":[Location],"Annual Income":[Annual_Income],"Previous Claims":[Previous_Claims]}
+    excel_file = "https://www.dropbox.com/scl/fi/l3yxmt5a6njrzkmz3c47l/train.csv?rlkey=g93z2ldy6qxvg59dkfchj68kd&st=7ys9wwpc&dl=0"
     data_1 = pd.DataFrame(data)
     st.success("Wait for your premium amount")
     
