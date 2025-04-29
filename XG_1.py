@@ -23,7 +23,7 @@ from data_cleaning import cleaning
 
 st.title("Smart premium")
 
-excel_file = st.file_uploader("Upload Training Excel (.xlsx)", type=["xlsx"])
+excel_file = st.file_uploader("Upload Training Excel (.CSV)", type=["CSV"])
 
 with st.form(key="data_form"):
 
@@ -44,7 +44,7 @@ if submitted:
     data_1 = pd.DataFrame(data)
     st.success("Wait for your premium amount")
     
-    dx = pd.read_excel(excel_file)
+    dx = pd.read_CSV(excel_file)
         
     categorical_columns = ['Gender','Smoking Status']
 
