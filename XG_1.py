@@ -24,7 +24,7 @@ import pickle
 
 st.title("Smart premium")
 
-with open('your_model.pkl', 'rb') as f:
+with open('XGR_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 excel_file = st.file_uploader("Upload Training Excel (.CSV)", type=["CSV"])
