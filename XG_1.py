@@ -20,12 +20,11 @@ from outlier import out_1
 from min_max import mima
 from data_cleaning import cleaning
 import pickle
+import joblib
 
 
 st.title("Smart premium")
-
-with open('XGR_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+model = joblib.load("XGR_model.pkl")
 
 excel_file = st.file_uploader("Upload Training Excel (.CSV)", type=["CSV"])
 
