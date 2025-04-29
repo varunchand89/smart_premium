@@ -44,7 +44,7 @@ if submitted:
     data_1 = pd.DataFrame(data)
     st.success("Wait for your premium amount")
     
-    dx = pd.read_CSV(excel_file)
+    dx = pd.read_csv(excel_file)
         
     categorical_columns = ['Gender','Smoking Status']
 
