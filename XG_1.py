@@ -26,7 +26,7 @@ import joblib
 st.title("Smart premium")
 
 
-excel_file = st.file_uploader("Upload Training Excel (.CSV)", type=["CSV"])
+excel_file = "https://www.dropbox.com/scl/fi/l3yxmt5a6njrzkmz3c47l/train.csv?rlkey=g93z2ldy6qxvg59dkfchj68kd&st=7ys9wwpc&dl=0"
 
 with st.form(key="data_form"):
 
