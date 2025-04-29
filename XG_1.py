@@ -23,6 +23,8 @@ from data_cleaning import cleaning
 
 st.title("Smart premium")
 
+train_file = st.file_uploader("Upload training CSV (train.csv)", type=["csv"])
+
 with st.form(key="data_form"):
 
   Age = st.number_input("Enter Your age")
@@ -41,7 +43,12 @@ if submitted:
     data = {"Age" : [Age],"Number of Dependents":[Number_of_Dependents],"Health Score":[Health_Score],"Credit Score":[Credit_Score],"Insurance Duration":[Insurance_Duration],"Gender":[Gender],"Smoking Status":[Smoking_Status],"Location":[Location],"Annual Income":[Annual_Income],"Previous Claims":[Previous_Claims]}
     data_1 = pd.DataFrame(data)
     st.success("Wait for your premium amount")
-    dx = pd.read_csv('C:/Users/Hp/Downloads/playground-series-s4e12/train.csv')
+    if train_file is not None:
+        dx = pd.read_csv(train_file)
+        st.info("Training data loaded successfully!")
+        # You can now use `dx` and `data_1` for prediction
+    else:
+        st.error("Please upload the training CSV file.")
     categorical_columns = ['Gender','Smoking Status']
 
     train_data_1 = cleaning(dx)
@@ -95,7 +102,7 @@ if submitted:
     scaler.fit(cato_3[['Premium Amount']])
     cato_test_3['Predicted_Target_premium_account'] = scaler.inverse_transform(cato_test_3[['Predicted_Target_premium_account']])
     
-#st.write(cato_test_3['Predicted_Target_premium_account'])
+st.write(cato_test_3['Predicted_Target_premium_account'])
     
     
    
