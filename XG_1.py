@@ -30,16 +30,16 @@ st.title("Smart premium")
 
 with st.form(key="data_form"):
 
-  Age = st.number_input("Enter Your age", value=100, step=1)
-  Number_of_Dependents = st.number_input("Enter Number of Dependents",value=10, step=1)
-  Health_Score = st.number_input("Enter your Health Score",value=50, step=1)
-  Credit_Score = st.number_input("Enter your Credit Score")
-  Insurance_Duration = st.number_input("Enter your Insurance Duration",value=10, step=1)
+  Age = st.number_input("Enter Your age", min_value=0, max_value=100, step=1)
+  Number_of_Dependents = st.number_input("Enter Number of Dependents",min_value=0, max_value=10, step=1)
+  Health_Score = st.number_input("Enter your Health Score",min_value=0, max_value=10, step=1)
+  Credit_Score = st.number_input("Enter your Credit Score",min_value=0, max_value=1000)
+  Insurance_Duration = st.number_input("Enter your Insurance Duration",min_value=0, max_value=10, step=1)
   Gender = st.selectbox("Enter your Gender", ['Gender','Female', 'Male'])
   Smoking_Status = st.selectbox("Enter your Smoking Status", ['Smoking','No', 'Yes'])
   Location = st.selectbox("Enter your Location", ['Location','Urban','Rural','Suburban'])
-  Annual_Income = st.number_input("Enter your Annual Income")
-  Previous_Claims = st.number_input("Enter your Previous Claims",value=10, step=1)
+  Annual_Income = st.number_input("Enter your Annual Income",min_value=0, max_value=10000000000)
+  Previous_Claims = st.number_input("Enter your Previous Claims",min_value=0, max_value=10, step=1)
   submitted = st.form_submit_button("Submit")
 
 if submitted:
