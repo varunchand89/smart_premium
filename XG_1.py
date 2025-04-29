@@ -24,7 +24,7 @@ import joblib
 
 
 st.title("Smart premium")
-model = joblib.load("XGR_model.pkl")
+
 
 excel_file = st.file_uploader("Upload Training Excel (.CSV)", type=["CSV"])
 
@@ -77,7 +77,7 @@ if submitted:
     col_1 =['Annual Income','Previous Claims','Predicted_Target_premium _account']
     
     #mlflow.set_tracking_uri("http://127.0.0.1:5000")
-    
+    model = joblib.load("XGR_model.pkl")
     predicted_values = model.predict(cato_test_1)
     cato_test_1["Predicted_Target_premium_account"] = predicted_values
 
