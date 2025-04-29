@@ -19,9 +19,13 @@ from lable import label_1
 from outlier import out_1
 from min_max import mima
 from data_cleaning import cleaning
+import pickle
 
 
 st.title("Smart premium")
+
+with open('your_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 excel_file = st.file_uploader("Upload Training Excel (.CSV)", type=["CSV"])
 
@@ -73,11 +77,9 @@ if submitted:
     scaler = MinMaxScaler()
     col_1 =['Annual Income','Previous Claims','Predicted_Target_premium _account']
     
-    mlflow.set_tracking_uri("http://127.0.0.1:5000")
-    model_uri = "models:/XGR_Boost/1"  # Replace 'latest' with a specific version if needed
-    loaded_model = mlflow.sklearn.load_model(model_uri)
+    #mlflow.set_tracking_uri("http://127.0.0.1:5000")
     
-    predicted_values = loaded_model.predict(cato_test_1)
+    predicted_values = model.predict(cato_test_1)
     cato_test_1["Predicted_Target_premium_account"] = predicted_values
 
     le = LabelEncoder()
