@@ -42,7 +42,7 @@ if submitted:
 
     cato_test_1 = cato_test_11
 
-    with open("C:/Users/Hp/OneDrive/Desktop/smart premium model/XGR_model_1.pkl", "rb") as f:
+    with open("XGR_model_1.pkl", "rb") as f:
        loaded_model = pickle.load(f)
     
     XGR_Boost = loaded_model
@@ -63,4 +63,5 @@ if submitted:
     cato_test_1["Predicted_Target_premium_account"] = predicted_values
     st.write(cato_test_1["Predicted_Target_premium_account"])
     
+
 
