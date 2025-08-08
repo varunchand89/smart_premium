@@ -55,7 +55,7 @@ if submitted:
         
         
     scaler = MinMaxScaler()
-    col_1 =['Annual Income','Previous Claims','Predicted_Target_premium _account']
+    col_1 =['Annual Income','Previous Claims','Predicted_Target_premium_account']
 
 
     
@@ -63,5 +63,6 @@ if submitted:
     cato_test_1["Predicted_Target_premium_account"] = predicted_values
     st.write(cato_test_1["Predicted_Target_premium_account"])
     
+
 
 
