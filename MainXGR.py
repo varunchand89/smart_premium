@@ -7,6 +7,7 @@ from lable import label_1
 import pickle
 import mlflow
 import mlflow.sklearn
+import numpy as np 
 
 
 st.title("Smart premium")
@@ -61,8 +62,9 @@ if submitted:
     
     predicted_values = XGR_Boost.predict(cato_test_1)
     cato_test_1["Predicted_Target_premium_account"] = predicted_values
-    st.write(cato_test_1["Predicted_Target_premium_account"])
+    st.write(np.expm1(cato_test_1["Predicted_Target_premium_account"]))
     
+
 
 
 
